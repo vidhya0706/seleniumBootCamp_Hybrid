@@ -13,8 +13,9 @@ public class A4_ViewOpportunity extends ProjectSpecificMethods {
 	}
 
 	public A4_ViewOpportunity verifyOpportunity(String name) {
-		 String OppName= driver.findElement(By.xpath(prop_lang.getProperty("xpath_verifycreatedopportunity"))).getText();
-		  System.out.println(OppName);
+		 //String OppName= driver.findElement(By.xpath(prop_lang.getProperty("xpath_verifycreatedopportunity"))).getText();
+		 String OppName= getTheActualText(locateElement("xpath",prop_lang.getProperty("xpath_verifycreatedopportunity")));
+		 System.out.println(OppName);
 		  
 		  
 		  if(OppName.contains(name))
@@ -30,7 +31,8 @@ public class A4_ViewOpportunity extends ProjectSpecificMethods {
 	}
 	
 	public A4_ViewOpportunity verifyEditedOpportunity() {
-		String OppName= driver.findElement(By.xpath(prop_lang.getProperty("xpath_verifyeditedopportunity"))).getText();
+		//String OppName= driver.findElement(By.xpath(prop_lang.getProperty("xpath_verifyeditedopportunity"))).getText();
+		String OppName= getTheActualText(locateElement("xpath",prop_lang.getProperty("xpath_verifyeditedopportunity")));
 		System.out.println(OppName);
 		if(OppName.contains("Perception Analysis"))
 		  {
@@ -44,7 +46,8 @@ public class A4_ViewOpportunity extends ProjectSpecificMethods {
 	}
 	
 	public A4_ViewOpportunity verifyDeletedOpportunity(String name1) {
-		String Name= driver.findElement(By.xpath(prop_lang.getProperty("xpath_verifydeletedopportunity"))).getText();
+		//String Name= driver.findElement(By.xpath(prop_lang.getProperty("xpath_verifydeletedopportunity"))).getText();
+		String Name= getTheActualText(locateElement("xpath",prop_lang.getProperty("xpath_verifydeletedopportunity")));
 		System.out.println(Name);
 		if(Name.contains(name1))
 		  {

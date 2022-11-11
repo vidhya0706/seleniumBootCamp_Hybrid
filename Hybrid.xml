@@ -3,11 +3,13 @@
 <suite name="Suite">
   <test thread-count="5" name="Test" verbose="3">
     <classes>
-<!--        <class name="testcases.Login"/> -->
+       <class name="testcases.Login"/>
 <!--       <class name="testcases.CreateOpportunity"/> -->
 <!--        <class name="testcases.EditOpportunity"/> -->
-       <class name="testcases.DeleteOpportunity"/>
-<!--    <class name="testcases.CreateAccount"/> -->
+<!--        <class name="testcases.DeleteOpportunity"/> -->
+<!--            <class name="testcases.CreateAccount"/> -->
+<!--             <class name="testcases.EditAccount"/> -->
+<!--              <class name="testcases.DeleteAccount"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

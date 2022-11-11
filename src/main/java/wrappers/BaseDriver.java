@@ -1,12 +1,19 @@
 package wrappers;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,18 +27,17 @@ public class BaseDriver implements Browser,Element{
 	public static WebDriverWait wait;
 	public static ChromeOptions options;
 
-	public void initializeBrowser(String url) {
-		//System.setProperty("webdriver.chrome.drive", "./drivers/chromedriver");
-		WebDriverManager.chromedriver().setup();
-		 options = new ChromeOptions();
-		options.addArguments("--disable-notifications");
-		driver = new ChromeDriver(options);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-	    executor = (JavascriptExecutor)driver;
-		//wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-		driver.navigate().to(url);
-		driver.manage().window().maximize();
-		
+	public void initializeBrowser(String url){
+	
+		  //System.setProperty("webdriver.chrome.drive", "./drivers/chromedriver");
+		  WebDriverManager.chromedriver().setup(); options = new ChromeOptions();
+		  options.addArguments("--disable-notifications"); 
+		  driver = new ChromeDriver(options);
+		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); 
+		  executor =(JavascriptExecutor)driver; 
+		  wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		  driver.navigate().to(url);
+		  driver.manage().window().maximize();
 	}
 
 	public void closeBrowser() {

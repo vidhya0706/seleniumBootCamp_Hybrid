@@ -1,5 +1,8 @@
 package wrappers;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public interface Browser {
 
 	/**
@@ -8,8 +11,10 @@ public interface Browser {
 	 * @return
 	 * @param browsername
 	 * @param url
+	 * @throws FileNotFoundException 
+	 * @throws IOException 
 	 */
-	public void initializeBrowser(String url);
+	public void initializeBrowser(String url) throws FileNotFoundException, IOException;
 	public void closeBrowser();
 	public void explicitWaitStatement(String locator, String locatorValue);
 	

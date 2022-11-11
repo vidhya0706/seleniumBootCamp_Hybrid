@@ -42,7 +42,7 @@ public class ProjectSpecificMethods extends BaseDriver {
 		prop.load(file);
 		String url= prop.getProperty("url");
 		
-		String browsername= prop.getProperty("browser");
+		//String browsername= prop.getProperty("browser");
 		String language =prop.getProperty("language");
 		
 		
@@ -51,20 +51,20 @@ public class ProjectSpecificMethods extends BaseDriver {
 		prop_lang.load(file1);
 		
 		
-		if(browsername.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions option =new ChromeOptions();
-			option.addArguments("--disable-notifications");
-			driver =new ChromeDriver(option);
-			
-		     }
-		else if(browsername.equalsIgnoreCase("edge")) {
-			WebDriverManager.edgedriver().setup();
-			EdgeOptions option =new EdgeOptions();
-			option.addArguments("--disable-notifications");
-			driver = new EdgeDriver(option);
-		     }
-		
+//		if(browsername.equalsIgnoreCase("chrome")) {
+//			WebDriverManager.chromedriver().setup();
+//			ChromeOptions option =new ChromeOptions();
+//			option.addArguments("--disable-notifications");
+//			driver =new ChromeDriver(option);
+//			
+//		     }
+//		else if(browsername.equalsIgnoreCase("edge")) {
+//			WebDriverManager.edgedriver().setup();
+//			EdgeOptions option =new EdgeOptions();
+//			option.addArguments("--disable-notifications");
+//			driver = new EdgeDriver(option);
+//		     }
+//		
 		
 		initializeBrowser(url);
 		driver.manage().window().maximize();
